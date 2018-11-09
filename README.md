@@ -7,10 +7,13 @@ Learners Place Ethereum Blockchain Workshop
 
 ### Ethereum Blockchain Transactions
 
-### Enough Javascript and Web3JS
+### Web3.js aka enough Javascript to be dangerous.
 
 ### Writing Secure Smart Contracts
 
 ### Ipfs
 
 ### Dapp Frontends
+
+© Copyright 2018 Fodé Diop - MIT License
+
