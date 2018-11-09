@@ -5,6 +5,8 @@ Learners Place Ethereum Blockchain Workshop
 1 Day Workshop Curriculum.
 
 ### Solidity and Smart Contracts
+    [Remix IDE](https://remix.ethereum.org/)
+    
     * ERC-20
     * ERC-721
 
