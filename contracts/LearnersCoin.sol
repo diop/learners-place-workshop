@@ -98,7 +98,7 @@ contract Owned {
 // ERC20 Token, with the addition of symbol, name and decimals and a
 // fixed supply
 // ----------------------------------------------------------------------------
-contract FixedSupplyToken is ERC20Interface, Owned {
+contract LearnersToken is ERC20Interface, Owned {
     using SafeMath for uint;
 
     string public symbol;
@@ -114,8 +114,8 @@ contract FixedSupplyToken is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = "FIXED";
-        name = "Example Fixed Supply Token";
+        symbol = "LRN";
+        name = "LearnersToken";
         decimals = 18;
         _totalSupply = 1000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;
@@ -158,7 +158,7 @@ contract FixedSupplyToken is ERC20Interface, Owned {
     //
     // https://github.com/ethereum/EIPs/blob/master/EIPS/eip-20-token-standard.md
     // recommends that there are no checks for the approval double-spend attack
-    // as this should be implemented in user interfaces 
+    // as this should be implemented in user interfaces
     // ------------------------------------------------------------------------
     function approve(address spender, uint tokens) public returns (bool success) {
         allowed[msg.sender][spender] = tokens;
@@ -169,7 +169,7 @@ contract FixedSupplyToken is ERC20Interface, Owned {
 
     // ------------------------------------------------------------------------
     // Transfer `tokens` from the `from` account to the `to` account
-    // 
+    //
     // The calling account must already have sufficient tokens approve(...)-d
     // for spending from the `from` account and
     // - From account must have sufficient balance to transfer

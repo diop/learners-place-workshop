@@ -12,28 +12,31 @@ const acct2 = '0x9870d54f9606e9103F91fcE6241033923fb2fCEd'
 const privateKey1 = Buffer.from(process.env.PRIVATE_KEY_1, 'hex')
 const privateKey2 = Buffer.from(process.env.PRIVATE_KEY_2, 'hex')
 
-web3.eth.getTransactionCount(acct1, (err, txCount) => {
-    //  Build a transaction
-    const txObject = {
-        nonce: web3.utils.toHex(txCount),
-        to: acct2,
-        value: web3.utils.toHex(web3.utils.toWei('0.1', 'ether')),
-        gasLimit: web3.utils.toHex(21000),
-        gasPrice:  web3.utils.toHex(web3.utils.toWei('10', 'gwei'))
-    }
-    // console.log(txobject)
-
-    // Sign a transaction
-    const tx = new Tx(txObject)
-    tx.sign(privateKey1)
-
-    const serializedTransaction = tx.serialize()
-    const raw = '0x' + serializedTransaction.toString('hex')
-
-    // Broadcast a transaction
-    web3.eth.sendSignedTransaction(raw, (err, txHash) => {
-        console.log('Transaction Hash: ', txHash)
-    }) 
-})
-
-// console.log(web3.eth.accounts.create())
+console.log(process.env.PRIVATE_KEY_1);
+console.log(process.env.PRIVATE_KEY_2);
+//
+// web3.eth.getTransactionCount(acct1, (err, txCount) => {
+//     //  Build a transaction
+//     const txObject = {
+//         nonce: web3.utils.toHex(txCount),
+//         to: acct2,
+//         value: web3.utils.toHex(web3.utils.toWei('0.1', 'ether')),
+//         gasLimit: web3.utils.toHex(21000),
+//         gasPrice:  web3.utils.toHex(web3.utils.toWei('10', 'gwei'))
+//     }
+//     // console.log(txobject)
+//
+//     // Sign a transaction
+//     const tx = new Tx(txObject)
+//     tx.sign(privateKey1)
+//
+//     const serializedTransaction = tx.serialize()
+//     const raw = '0x' + serializedTransaction.toString('hex')
+//
+//     // Broadcast a transaction
+//     web3.eth.sendSignedTransaction(raw, (err, txHash) => {
+//         console.log('Transaction Hash: ', txHash)
+//     })
+// })
+//
+// // console.log(web3.eth.accounts.create())
