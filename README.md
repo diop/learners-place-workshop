@@ -48,7 +48,7 @@ web3.eth.getTransactionCount(acct1, (err, txCount) => {
 
     web3.eth.sendSignedtransaction(raw, (err, txHash) => {
         console.log('Transaction Hash: ', txHash)
-    }) 
+    })
 })
 ```
 * Using Ganache
@@ -59,7 +59,7 @@ $ const Web3 = require('web3')
 $ const web3 = new Web3('http://127.0.0.1:7545')
 $ const acct1 = '0x627306090abaB3A6e1400e9345bC60c78a8BEf57'
 $ const acct2 = '0xf17f52151EbEF6C7334FAD080c5704D77216b732'
-$ web3.eth.sendTransaction({ from: acct1, to: acct, value: web3.utils.toWei('1', 'ether') })
+$ web3.eth.sendTransaction({ from: acct1, to: acct2, value: web3.utils.toWei('1', 'ether') })
 $ web3.eth.getBalance(acct1)
 $ web3.eth.personal.unlockAccount --> On Geth
 ```
@@ -102,7 +102,7 @@ $ web3.eth.accounts.create()
 
 ```js
 $ web3.eth.getBalance('GANACHE_ACCOUNT_ADDRESS', (err, wei) => {balance = web3.utils.fromWei(wei, 'ether')})
-$ balance 
+$ balance
 ```
 
 + ``` web3.eth.Contract ``` creates an abstraction of our Smart Contract we can abstract with in Javascript.
@@ -198,4 +198,3 @@ $ const accountAddress = ACCOUNT_ADDRESS_FROM_HOLDERS_LIST
 * **Digital signature**: a digital signing algorithm is a process by which a user can produce a short string of data called a "signature" of a document using a private key such that anyone with the corresponding public key, the signature and the document can verify that (1) the document was "signed" by the owner of that particular private key, and (2) the document was not changed after it was signed. Note that this differs from traditional signatures where you can scribble extra text onto a document after you sign it and there's no way to tell the difference; in a digital signature any change to the document will render the signature invalid.
 
 © Copyright 2018 Fodé Diop - MIT License
-
